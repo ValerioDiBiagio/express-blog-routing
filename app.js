@@ -12,3 +12,8 @@ app.listen(port,() => {
 const postsRouter = require('./routers/posts');
 app.use('/posts', postsRouter);
 
+// pagina iniziale
+app.get('/', (req, res) => {
+    res.send('Homepage');
+})
+

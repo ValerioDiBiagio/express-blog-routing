@@ -2,9 +2,12 @@
 const express = require('express');
 const router = express.Router();
 
+// collegamento alla lista dei post
+const postsArray = require('../data/posts-array');
+
 // index
 router.get('/', (req, res) => {
-    res.send('Lista dei post');
+    res.json(postsArray);
 });
 
 // show
