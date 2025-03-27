@@ -12,8 +12,14 @@ app.listen(port,() => {
 const postsRouter = require('./routers/posts');
 app.use('/posts', postsRouter);
 
+// asset statici
+app.use(express.static('public'));
+
+
 // pagina iniziale
 app.get('/', (req, res) => {
     res.send('Homepage');
 })
+
+
 
