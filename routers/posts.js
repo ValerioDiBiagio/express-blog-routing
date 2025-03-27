@@ -13,7 +13,12 @@ router.get('/', (req, res) => {
 // show
 router.get('/:id', (req, res) => {
     const {id} = req.params
-    res.send('Dettagli dei post ' + id);
+    const post = postsArray[id-1];
+    if (id <= postsArray.length) {
+        res.json(post);
+    } else {
+        res.send('Elemento non trovato');
+    }
 })
 
 // store
