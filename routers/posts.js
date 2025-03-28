@@ -13,12 +13,8 @@ router.get('/', (req, res) => {
 // show
 router.get('/:id', (req, res) => {
     const {id} = req.params
-    const post = postsArray[id-1];
-    if (id <= postsArray.length) {
-        res.json(post);
-    } else {
-        res.send('Elemento non trovato');
-    }
+    const currentPost = postsArray.find(post => post.slug === id);
+    res.json(currentPost);
 })
 
 // store
